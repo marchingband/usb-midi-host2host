@@ -9,7 +9,9 @@ The hardware connections are:
 
 The primary use case is to connect your PC to a MIDI device which only has USB MIDI Host input, maybe for testing, or for production or performance.  
 Any Baud rate will be fine, I have used 31250 for no particular reason.  
-Since both boards are in USB Device mode, power comes from the connected MIDI devices, so no other power is needed.
+Since both boards are in USB Device mode, power comes from the connected MIDI devices, so no other power is needed.  
+
+Here is the USB-MIDI spec, in case you are curious, the header definitions are on page 11: https://usb.org/sites/default/files/midi10.pdf  
 
   
 ![wiring-pic](https://github.com/marchingband/usb-midi-host2host/assets/34205564/0fbe9b8e-1402-4b51-9e2a-beeaf7168b1b)
