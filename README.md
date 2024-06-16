@@ -7,7 +7,7 @@ The hardware connections are:
 * TX -> RX
 * GND -> GND
 
-The primary use case is to connect your PC to a MIDI device which only has USB MIDI Host input, weather for testing, or for production or performance.  
+The primary use case is to connect your PC to a MIDI device which only has USB MIDI Host input, maybe for testing, or for production or performance.  
 Any Baud rate will be fine, I have used 31250 for no particular reason.  
 Since both boards are in USB Device mode, power comes from the connected MIDI devices, so no other power is needed.
 
