@@ -2,6 +2,8 @@
 #include "MIDIUSB.h"
 
 midiEventPacket_t rx;
+uint8_t uart_buf[4] = {0};
+size_t buf_p = 0;
 bool _blink = false;
 
 void blink(void){
@@ -18,9 +20,6 @@ void usb_device_loop(void)
 	} 
 }
 
-uint8_t uart_buf[4] = {0};
-size_t buf_p = 0;
-
 void midi_uart_loop(void){
     int data = Serial1.read();
     if(data != -1){
@@ -28,13 +27,12 @@ void midi_uart_loop(void){
         buf_p++;
         if(buf_p == 4){
             MidiUSB.write(uart_buf, 4);
+            MidiUSB.flush();
             buf_p = 0;
+            blink();
         }
-        MidiUSB.flush();
-        blink();
     }
 }
-
 
 void setup(){
     Serial1.begin(31250);
