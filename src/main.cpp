@@ -14,10 +14,10 @@ void blink(void){
 void usb_device_loop(void)
 {
     rx = MidiUSB.read();
-	if (rx.header != 0){                    // 0 header is just noise.
+    if (rx.header != 0){                    // 0 header is just noise.
         Serial1.write((uint8_t *)&rx, 4);   // midiEventPacket_t is a struct with 4 uint8_t's, so we can cast it to an array.
         blink();
-	} 
+    } 
 }
 
 void midi_uart_loop(void){
